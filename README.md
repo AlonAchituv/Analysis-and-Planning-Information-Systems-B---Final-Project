@@ -63,6 +63,19 @@ The system features a **hands-off financial ledger** automatically populated by 
 
 ---
 
+## 🧩 Key Technical Challenges & Solutions
+
+- **Public vs. Private Menu:**  
+  - *Challenge:* Show recipe details to employees but hide them from customers.  
+  - *Solution:* Created a separate public-facing page with customer-safe fields (name, image, price).
+
+- **Syncing Absences to Shifts:**  
+  - *Challenge:* Difficult to link Absence DateTime with Shift Date + Time.  
+  - *Solution:* Rebuilt Absences form using a Date field and a multi-select lookup to `Shifts_Types`.  
+    Allows consistent availability checks (e.g., *“Absent for Morning shift on 2025-10-22”*).
+
+---
+
 ## 🧠 Technology Stack
 
 - **Platform:** Zoho Creator (Low-Code)
@@ -76,7 +89,12 @@ The system features a **hands-off financial ledger** automatically populated by 
 - Chen Biazi  
 - Noa Ezri  
 - Niv Mairovich  
-- Alon Achitov
+- Alon Achitov  
+
+**Project Grade:** 100  
+**Note:** This project was built using an **academic free license** of Zoho Creator.  
+Due to licensing restrictions, it was not possible to share a public link for live system demonstration or viewing.  
+However, **detailed screenshots of different application pages** are available in the **System Manual PDF** attached to this project repository.
 
 ---
 
