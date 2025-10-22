@@ -1,2 +1,85 @@
-# Analysis-and-Planning-Information-Systems-B---Final-Project
-A full-stack information system for a local pizza business, built on Zoho Creator. This end-to-end solution automates core processes: CRM, order management, inventory control, HR scheduling, and financial tracking. Collaboratively developed to optimize efficiency and eliminate manual errors.
+# 🍕 CANN Pizzeria - Comprehensive Management System
+
+A **full-stack information system** for a local pizza business, built on **Zoho Creator**.  
+This end-to-end solution automates core business processes — **CRM, order management, inventory control, HR scheduling,** and **financial tracking** — developed through synchronized teamwork to eliminate manual errors and maximize efficiency.
+
+---
+
+## 📦 Our Solution & System Architecture
+
+The system replaces manual, error-prone operations with an integrated **Zoho Creator application** based on a **relational database**.  
+Dynamic workflows ensure that an action in one module automatically updates related data across the platform.
+
+---
+
+## ⚙️ Core Workflows
+
+### 1. Dynamic Order & Inventory Automation
+
+A **closed-loop inventory system** manages stock from purchase to sale.
+
+- **Smart Order Forms:**  
+  Real-time filtering connects *Menu* and *Recipes* with *Inventory*, only showing items possible with current stock.
+- **Cumulative Stock Validation:**  
+  Before order submission, an `"On-Validate"` script aggregates total ingredient demand and checks stock availability.  
+  Prevents overselling or depleting shared ingredients.
+- **Automated Stock Ledger:**  
+  - **Deduction (On-Success):** Automatically reduces ingredient quantities when orders are placed.  
+  - **Addition (Custom Function):** Increases stock when managers confirm supplier deliveries via the "Receive Order" button.
+- **Proactive Alerts:**  
+  Automatic email notifications trigger when stock drops below *safety_stock* thresholds.
+
+---
+
+### 2. Intelligent HR & Smart Scheduling
+
+A **dynamic HR module** ensures accuracy in staff scheduling and availability.
+
+- **Dynamic Staff Filtering:**  
+  - Displays only *Active* employees.  
+  - Hides those marked *Absent* for specific shifts.  
+  - Prevents duplicate assignments.
+- **Minimum Staff Validation:**  
+  Ensures every Shift Type meets required staffing (e.g., 2 Cooks + 1 Driver).  
+  Shifts cannot be saved unless this validation passes.
+- **Automated Communication:**  
+  A scheduled workflow (`Send_Employee_Roster_For_`) emails the next week’s roster to all active employees every Saturday night.
+
+---
+
+### 3. Automated Financial Ledger & BI
+
+The system features a **hands-off financial ledger** automatically populated by system events and visualized via a BI dashboard.
+
+- **Automated Transaction Logging:**  
+  The `Finance_Records` table serves as a read-only source of truth.
+  - **Income:** Logged when customer orders are received.  
+  - **COGS Expense:** Logged upon supplier stock receipt.  
+  - **Payroll Expense:** Calculated monthly by the scheduled `Calc_Monthly_Salary` job (total hours × hourly_rate).
+- **Management Dashboard:**  
+  Built in **ZML**, offering KPIs, charts, and reports such as:  
+  - *Low Stock Items*  
+  - *Returning vs. New Customers*
+
+---
+
+## 🧠 Technology Stack
+
+- **Platform:** Zoho Creator (Low-Code)
+- **Language:** Deluge (for workflows, automation, and scheduling)
+- **Dashboard UI:** ZML (Zoho Markup Language)
+
+---
+
+## 👨‍💻 Project Team
+
+- Chen Biazi  
+- Noa Ezri  
+- Niv Mairovich  
+- Alon Achitov
+
+---
+
+## 💡 Summary
+
+CANN Pizzeria’s system transforms manual operations into an intelligent, automated platform that synchronizes **orders, inventory, staff management,** and **finance**, delivering efficiency, accuracy, and real-time insight across the business.
